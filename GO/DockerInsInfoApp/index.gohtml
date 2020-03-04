@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+        <head>
+                <meta charset="utf-8">
+                <title>My Test Website</title>
+                <style>
+                        img {
+                                width: 80%;
+                                height: auto;
+                                -moz-box-shadow: 0 0 10px black;
+                                -webkit-box-shadow: 0 0 10px black;
+                                box-shadow: 0 0 10px black;
+                        }
+                        body {
+                                overflow-x: hidden;
+                        }
+                        #MyContents{
+                                position: relative; width: 80%; margin: 50px auto; padding: 20px; background: white; -moz-box-shadow: 0 0 20px black; -webkit-box-shadow: 0 0 20px black; box-shadow: 0 0 20px black;
+                        }
+                        img.bg {
+                                /*set rule to fill background*/
+                                min-height: 100%;
+                                min-width: 100%;
+                                /*setup proportional scaling*/
+                                width:100%;
+                                height: auto;
+                                /*setup positioning*/
+                                position: fixed;
+                                top: 0;
+                                left: 0;
+                        }
+      table.minimalistBlack {
+        border: 3px solid #000000;
+        text-align: left;
+        border-collapse: collapse;
+      }
+      table.minimalistBlack td, table.minimalistBlack th {
+        border: 1px solid #000000;
+        padding: 5px 4px;
+      }
+      table.minimalistBlack tbody td {
+        font-size: 26px;
+      }
+      table.minimalistBlack thead {
+        background: #CFCFCF;
+        background: -moz-linear-gradient(top, #dbdbdb 0%, #d3d3d3 66%, #CFCFCF 100%);
+        background: -webkit-linear-gradient(top, #dbdbdb 0%, #d3d3d3 66%, #CFCFCF 100%);
+        background: linear-gradient(to bottom, #dbdbdb 0%, #d3d3d3 66%, #CFCFCF 100%);
+        border-bottom: 3px solid #000000;
+      }
+      table.minimalistBlack thead th {
+        font-size: 30px;
+        font-weight: bold;
+        color: #000000;
+        text-align: left;
+      }
+      tr:nth-child(even) {background-color: #d8e7ff;}
+                </style>
+        </head>
+        <body>
+                <img src="https://previews.123rf.com/images/apostrophe/apostrophe1604/apostrophe160400050/56269936-abstract-silver-gray-background-white-center-darker-border-with-sponge-vintage-grunge-background-tex.jpg" class="bg">
+                <div id="MyContents">
+                        <h1>
+                                <center>My Go Website</center>
+                        </h1>
+                        <br>
+      <h2>
+        <center>
+          <p>Server Info:</p>
+          <table class="minimalistBlack">
+            <thead>
+              <tr>
+                <th>Type</th>
+                <th>Data</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Instance ID</td>
+                <td>{{.InstanceId}}</td>
+              </tr>
+              <tr>
+                <td>Container Host Name</td>
+                <td>{{.HostName}}</td>
+              </tr>
+              <tr>
+                <td>Container IP Address</td>
+                <td>{{.ContainerIP}}</td>
+              </tr>
+              <tr>
+                <td>Instance Public IP</td>
+                <td>{{.InstancePublicIP}}</td>
+              </tr>
+              <tr>
+                <td>Instance Private IP</td>
+                <td>{{.InstancePrivateIP}}</td>
+              </tr>
+              <tr>
+                <td>Client IP Address:Port</td>
+                <td>{{.ClientIP}}</td>
+              </tr>
+              <tr>
+                <td>Current Time (UTC)</td>
+                <td>{{.TheTime}}</td>
+              </tr>
+              <tr>
+                <td>Website View Count (Cache)</td>
+                <td>{{.TotalViewCount}}</td>
+              </tr>
+              {{/* <tr>
+                <td>Client Visited (DB)</td>
+                <td>Error - php_network_getaddresses: getaddrinfo failed: Name does not resolve</td>
+              </tr> */}}
+              <tr>
+                <td>Instance Visited (DB)</td>
+                <td>{{.InstanceCount}}</td>
+              </tr>
+              {{/* <tr>
+                <td>Container Visited (DB)</td>
+                <td>Error - php_network_getaddresses: getaddrinfo failed: Name does not resolve</td>
+              </tr> */}}
+            </tbody>
+          </table>
+        </center>
+      </h2>
+                        <h3>
+                                <center>Image 1</center>
+                        </h3>
+                        <center>
+                                <a href="https://image.slidesharecdn.com/devopsonaws-acceleratingsoftwaredelivery-170629005251/95/devops-on-aws-accelerating-software-delivery-11-638.jpg"  target="_blank">
+                                        <img src="https://image.slidesharecdn.com/devopsonaws-acceleratingsoftwaredelivery-170629005251/95/devops-on-aws-accelerating-software-delivery-11-638.jpg" alt="screen-shot1" title="screen-shot1">
+                                </a>
+                        </center>
+                        <br>
+                        <h3>
+                                <center>Image 2</center>
+                        </h3>
+                        <center>
+                                <a href="https://image.slidesharecdn.com/devopsonaws-deepdiveandawsdevtools-160505154738/95/devops-on-aws-3-638.jpg"  target="_blank">
+                                        <img src="https://image.slidesharecdn.com/devopsonaws-deepdiveandawsdevtools-160505154738/95/devops-on-aws-3-638.jpg" alt="screen-shot1" title="screen-shot2">
+                                </a>
+                        </center>
+                        <br>
+                        <h3>
+                                <center>Image 3</center>
+                        </h3>
+                        <center>
+                                <a href="https://image.slidesharecdn.com/2017-03-28-loft-devops-intro-170328202927/95/introduction-to-devops-and-the-aws-code-services-12-638.jpg"  target="_blank">
+                                        <img src="https://image.slidesharecdn.com/2017-03-28-loft-devops-intro-170328202927/95/introduction-to-devops-and-the-aws-code-services-12-638.jpg" alt="screen-shot1" title="screen-shot3">
+                                </a>
+                        </center>
+                </div>
+        </body>
+</html>
+

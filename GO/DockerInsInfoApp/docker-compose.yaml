@@ -1,0 +1,42 @@
+version: '3'
+services:
+  gowebapp:
+    build: .
+    container_name: gowebapp
+    ports:
+     - "80:3000"
+    networks:
+      - gowebapp_net
+    environment:
+      - DB_NAME=thego
+      - DB_USER=rootuser
+      - DB_PASSWORD=RootPass123
+      - DB_ENDPOINT=mysql
+      - EC_ENDPOINT=redis
+  mysql:
+    container_name: mysql
+    image: mysql:8.0
+    ports:
+    - "3306:3306"
+    volumes:
+    - mysql-data:/var/lib/mysql
+    environment:
+    - MYSQL_ROOT_PASSWORD=RootPass123
+    - MYSQL_DATABASE=thego
+    - MYSQL_USER=rootuser
+    - MYSQL_PASSWORD=RootPass123
+    networks:
+      - gowebapp_net
+  redis:
+    container_name: redis
+    image: redis:5.0.7-alpine
+    ports:
+    - "6379:6379"
+    networks:
+      - gowebapp_net
+
+networks:
+  gowebapp_net:
+
+volumes:
+  mysql-data:

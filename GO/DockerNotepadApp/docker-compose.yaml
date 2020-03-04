@@ -1,0 +1,37 @@
+version: '3'
+services:
+  gowebapp:
+    build: .
+    container_name: gowebapp
+    ports:
+     - "80:80"
+    networks:
+      - gowebapp_net
+  mysql:
+    container_name: mysql
+    image: mysql:8.0
+    ports:
+    - "3306:3306"
+    volumes:
+    - mysql-data:/var/lib/mysql
+    env_file:
+    - mysqlEnv.list
+    networks:
+      - gowebapp_net
+  mongodb:
+    container_name: mongodb
+    image: mongo:4.2
+    ports:
+    - "27017:27017"
+    volumes:
+    - mongodb-data:/data/db
+    networks:
+      - gowebapp_net
+
+networks:
+  gowebapp_net:
+
+volumes:
+  mysql-data:
+  mongodb-data:
+
